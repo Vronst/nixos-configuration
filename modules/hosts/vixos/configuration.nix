@@ -1,4 +1,5 @@
-{ self, inputs, ... }: {
+{ self, inputs, config, ... }:
+{
 
   flake.nixosModules.vixosConfiguration = { pkgs, lib, ... }: {
     #modules
@@ -14,13 +15,10 @@
       self.nixosModules.steam
 
       # conf files
+      self.nixosModules.homeManager
       self.nixosModules.conf_zed
       self.nixosModules.conf_ssh
     ];
-
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.users.vronst.home.stateVersion = "25.11";
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
