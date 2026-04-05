@@ -6,6 +6,7 @@
       paths = [
         pkgs.neovim pkgs.git pkgs.gnupg
         pkgs.unzip pkgs.p7zip pkgs.python314
+        pkgs.tree
       ];
     };
 

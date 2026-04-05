@@ -14,8 +14,8 @@
       self.nixosModules.steam
 
       # conf files
-      self.nixosModules.conf_zed_vronst
-      self.nixosModules.conf_ssh_vronst
+      self.nixosModules.conf_zed
+      self.nixosModules.conf_ssh
     ];
 
     home-manager.useGlobalPkgs = true;

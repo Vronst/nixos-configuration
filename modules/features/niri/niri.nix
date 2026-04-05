@@ -33,6 +33,13 @@
           "position x=1920 y=0" = null;
         };
 
+        "XF86AudioMute".spawn = [ (lib.getExe' pkgs.wireplumber "wpctl") "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+        "XF86AudioRaiseVolume".spawn = [ (lib.getExe' pkgs.wireplumber "wpctl") "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ];
+        "XF86AudioLowerVolume".spawn = [ (lib.getExe' pkgs.wireplumber "wpctl") "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
+
+        "XF86MonBrightnessUp".spawn = [ (lib.getExe pkgs.brightnessctl) "set" "5%+" ];
+        "XF86MonBrightnessDown".spawn = [ (lib.getExe pkgs.brightnessctl) "set" "5%-" ];
+
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
          input = {
