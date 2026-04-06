@@ -1,9 +1,20 @@
-{ self, lib, config, inputs, user, ... }:
+{ self, lib, config, inputs, ... }:
+let
+  user = config._module.args.user;
+in
 {
   flake.nixosModules.homeManager = {
-    home-manager.extraSpecialArgs = { inherit inputs self;};
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.users.vronst.home.stateVersion = "25.11";
+    home-manager = {
+      extraSpecialArgs = { inherit inputs; user = config._module.args.user;};
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      users.${user}.home.stateVersion = "25.11";
+    };
+
+    imports = [
+            # conf files
+            self.nixosModules.conf_zed
+            self.nixosModules.conf_ssh
+    ];
   };
 }

@@ -3,6 +3,7 @@
 
   flake.nixosModules.vixosConfiguration = { pkgs, lib, ... }: {
     #modules
+    _module.args.user = "vronst";
     imports = [
       inputs.home-manager.nixosModules.home-manager
 
@@ -13,11 +14,6 @@
       self.nixosModules.vocker
       self.nixosModules.vodman
       self.nixosModules.steam
-
-      # conf files
-      self.nixosModules.homeManager
-      self.nixosModules.conf_zed
-      self.nixosModules.conf_ssh
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
