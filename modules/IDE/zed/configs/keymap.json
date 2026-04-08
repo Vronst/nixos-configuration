@@ -1,0 +1,107 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "space tab": "tab_switcher::Toggle",
+      "space g f": "file_finder::Toggle",
+      // "space space q": ["workspace::SendKeystrokes", "escape"],
+      "space f f": "workspace::ToggleZoom",
+      "ctrl-alt-space": "workspace::ResetActiveDockSize",
+    },
+  },
+  {
+    "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
+    "bindings": {
+      "ctrl-shift-p": "file_finder::SelectPrevious",
+      "space j": "pane::SplitDown",
+      "space k": "pane::SplitUp",
+      "space h": "pane::SplitLeft",
+      "space l": "pane::SplitRight",
+    },
+  },
+  {
+    "context": "Pane && !Terminal",
+    "bindings": {
+      "space c c": "pane::CloseActiveItem",
+      "v s k": "pane::SplitUp",
+      "v s j": "pane::SplitDown",
+      "v s h": "pane::SplitLeft",
+      "v s l": "pane::SplitRight",
+    },
+  },
+  {
+    "context": "Workspace && !Editor && !Terminal",
+    "bindings": {
+      "space n": "workspace::ToggleLeftDock",
+      "shift shift": "file_finder::Toggle",
+      "space o": ["workspace::SendKeystrokes", "z a"],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "enter": "editor::ConfirmCompletion",
+      "shift-enter": "editor::ComposeCompletion",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space c c": "pane::CloseActiveItem",
+      "ctrl-j": "terminal_panel::Toggle",
+      "space n": "workspace::ToggleLeftDock",
+      "space w": "workspace::Save",
+      "space c a": "pane::CloseOtherItems",
+    },
+  },
+  {
+    "context": "menu && !Editing",
+    "bindings": {
+      "space h": "workspace::ActivatePaneLeft",
+      "space l": "workspace::ActivatePaneRight",
+      "space k": "workspace::ActivatePaneUp",
+      "space j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "escape": "menu::Cancel",
+      "shift-tab": "menu::SelectPrevious",
+      "tab": "menu::SelectNext",
+      "enter": "picker::ConfirmCompletion",
+      // "alt-enter": ["picker::ConfirmInput", { "secondary": false }]
+    },
+  },
+  {
+    "context": "Picker || menu",
+    "bindings": {
+      "shift-tab": "menu::SelectPrevious",
+      "tab": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "space j k": "terminal::ToggleViMode",
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+      "space space c c": "pane::CloseActiveItem",
+      "v s k": "pane::SplitUp",
+      "v s j": "pane::SplitDown",
+      "v s h": "pane::SplitLeft",
+      "v s l": "pane::SplitRight",
+      "ctrl-n": "workspace::NewTerminal",
+    },
+  },
+]
