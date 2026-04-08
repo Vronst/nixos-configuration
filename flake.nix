@@ -14,6 +14,7 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    home = home-manager.nixosModules.home-manager;
   in
   {
 
@@ -26,13 +27,20 @@
       };
       modules = [
         ./hosts/vixos
-        home-manager.nixosModules.home-manager
+        home
       ];
     };
 
-    #packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    #packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
+    # nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+    #   inherit system;
+    #   specialArgs = {
+    #     inherit inputs;
+    #     username = "verver";
+    #   };
+    #   modules = [
+    #     ./hosts/server
+    #     home
+    #   ];
+    # };
   };
 }

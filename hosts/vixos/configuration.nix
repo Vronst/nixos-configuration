@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+  # for X11 applications
+  environment.sessionVariables = {
+    DISPLAY = ":0";
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.

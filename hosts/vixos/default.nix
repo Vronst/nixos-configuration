@@ -19,6 +19,7 @@
 
       ../../modules/niri
       ../../modules/niri/home_config.nix
+      ../../modules/niri/utils.nix
 
       ../../modules/noctalia
       ../../modules/noctalia/home_config.nix
@@ -26,6 +27,7 @@
       ../../modules/homeManager/home.nix
       ../../modules/homeManager/aliases.nix
 
-      ../../modules/discord
+      # ../../modules/discord
+      # ../../modules/steam
     ];
 }
