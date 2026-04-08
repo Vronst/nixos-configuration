@@ -2,6 +2,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./nvim.nix
     ];
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 }

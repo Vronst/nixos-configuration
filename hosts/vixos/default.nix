@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./configuration.nix
 
       ./hardware-configuration.nix
@@ -14,14 +14,18 @@
 
       ../../modules/IDE/nvim
 
-      ../../modules/git
+      ../../modules/versionControl
+      ../../modules/versionControl/gpg.nix
 
       ../../modules/niri
       ../../modules/niri/home_config.nix
 
+      ../../modules/noctalia
+      ../../modules/noctalia/home_config.nix
+
       ../../modules/homeManager/home.nix
       ../../modules/homeManager/aliases.nix
 
-      ../../modules/git/gpg.nix
+      ../../modules/discord
     ];
 }

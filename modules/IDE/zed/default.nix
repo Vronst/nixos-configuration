@@ -1,11 +1,7 @@
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./zed.nix
     ];
-  
-  environment.systemPackages = with pkgs; [
-    zed-editor
-  ];
 }

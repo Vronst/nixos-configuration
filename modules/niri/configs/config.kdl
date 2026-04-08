@@ -50,7 +50,8 @@ layout {
 }
 
 // --- Auto-Start ---
-// spawn-at-startup "discord"
+spawn-at-startup "discord"
+spawn-at-startup "noctalia-shell"
 
 // --- Keybindings ---
 binds {
