@@ -1,6 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    noctalia-shell
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+  # for noctalia options
+  hardware.bluetooth.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
 }

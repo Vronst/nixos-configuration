@@ -8,9 +8,14 @@
           url = "github:nix-community/home-manager/release-25.11";
           inputs.nixpkgs.follows = "nixpkgs"; # Keeps HM and NixOS on the same nixpkgs version
         };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
