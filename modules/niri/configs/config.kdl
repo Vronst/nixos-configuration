@@ -59,6 +59,7 @@ layout {
 }
 
 // --- Auto-Start ---
+spawn-at-startup "xwayland-satellite"
 spawn-at-startup "discord"
 spawn-at-startup "noctalia-shell"
 

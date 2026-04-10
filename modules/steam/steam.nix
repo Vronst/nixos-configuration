@@ -7,7 +7,7 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  programs.xwayland.enable = true;
+  # programs.xwayland.enable = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

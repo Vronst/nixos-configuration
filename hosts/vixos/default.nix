@@ -27,7 +27,7 @@
       ../../modules/homeManager/home.nix
       ../../modules/homeManager/aliases.nix
 
-      # ../../modules/discord
-      # ../../modules/steam
+      ../../modules/discord
+      ../../modules/steam
     ];
 }

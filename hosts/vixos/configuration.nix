@@ -7,6 +7,10 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  environment.sessionVariables = {
+    DISPLAY = ":0";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
