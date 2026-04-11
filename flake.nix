@@ -36,16 +36,16 @@
       ];
     };
 
-    # nixosConfigurations.server = nixpkgs.lib.nixosSystem {
-    #   inherit system;
-    #   specialArgs = {
-    #     inherit inputs;
-    #     username = "verver";
-    #   };
-    #   modules = [
-    #     ./hosts/server
-    #     home
-    #   ];
-    # };
+    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit inputs;
+        username = "verver";
+      };
+      modules = [
+        ./hosts/server
+        home
+      ];
+    };
   };
 }

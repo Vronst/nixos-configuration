@@ -15,9 +15,12 @@
 
       ../../modules/homeManager/home.nix
       ../../modules/homeManager/aliases.nix
+      ../../modules/homeManager/alwaysOn.nix
 
       ../../modules/containers
+
       ../../modules/ssh/home_config.nix
+
       ../../modules/ssh/openssh.nix
     ];
 }
