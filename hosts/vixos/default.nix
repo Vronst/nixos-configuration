@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports =
     [
@@ -29,5 +28,8 @@
 
       ../../modules/discord
       ../../modules/steam
+
+      ../../modules/containers
+      ../../modules/ssh/home_config.nix
     ];
 }

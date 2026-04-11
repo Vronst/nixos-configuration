@@ -1,9 +1,5 @@
 { config, pkgs, lib, username, ... }:
 {
-  imports =
-    [
-    ];
-
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
@@ -18,6 +14,8 @@
       curl
     ];
     programs.bash.enable = true;
+    programs.tmux.enable = true;
+    programs.nh.enable = true;
 
     # The state version is required and should stay at the version you
     # originally installed.

@@ -20,14 +20,6 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     home = home-manager.nixosModules.home-manager;
-    wrapX11 = pkg: binaryName: pkgs.symlinkJoin {
-      name = "${pkg.name}-wrapped";
-      paths = [ pkg ];
-      buildInputs = [ pkgs.makeWrapper ];
-      postBuild = ''
-        wrapProgram $out/bin/${binaryName} --set DISPLAY :0
-      '';
-    };
   in
   {
 
@@ -35,7 +27,7 @@
     nixosConfigurations.vixos = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
-        inherit inputs wrapX11;
+        inherit inputs;
         username = "vronst";
       };
       modules = [
