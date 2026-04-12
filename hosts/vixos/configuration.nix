@@ -3,8 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, username, ... }:
-
 {
+  imports = [
+      ./hardware-configuration.nix
+    ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.sessionVariables = {
